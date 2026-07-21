@@ -1,5 +1,5 @@
 import { Fade } from 'react-awesome-reveal';
-import { ShieldCheck, Workflow, Server, UserCheck } from 'lucide-react';
+import { ShieldCheck, Workflow, Server, UserCheck, Target, Activity, Compass } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const ICONS = {
@@ -13,13 +13,13 @@ export default function Nosotros() {
   const { t } = useLanguage();
 
   return (
-    <section id="nosotros" className="bg-paper py-24 md:py-32 border-t border-ink-150">
-      <div className="section-container">
+    <section id="nosotros" className="bg-white py-24 md:py-32 border-t border-ink-150 relative">
+      <div className="section-container relative">
         {/* Core Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Left Column: Purpose, Mission, Vision */}
-          <div className="lg:col-span-5 flex flex-col gap-10">
+          {/* Left Column: Purpose, Mission, Vision (Now as rich panels) */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
             <Fade direction="left" triggerOnce duration={600}>
               <div>
                 <p className="eyebrow">{t.nosotros.eyebrow}</p>
@@ -29,39 +29,58 @@ export default function Nosotros() {
               </div>
             </Fade>
 
-            <Fade direction="left" cascade damping={0.12} triggerOnce delay={100}>
-              <div className="flex flex-col gap-8">
-                {/* Purpose */}
-                <div className="border-l-2 border-green pl-6 py-1">
-                  <h3 className="font-display text-lg font-bold text-ink-900">
-                    {t.nosotros.purpose.title}
-                  </h3>
-                  <p className="mt-2.5 text-base text-ink-650 leading-relaxed">
-                    {t.nosotros.purpose.text}
-                  </p>
+            <div className="flex flex-col gap-6">
+              {/* Purpose */}
+              <Fade direction="left" triggerOnce delay={100} duration={600}>
+                <div className="rounded-card bg-paper border border-ink-200 p-6 shadow-sm hover:shadow-md hover:bg-white transition-all duration-350 flex items-start gap-4 group">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-tint text-green transition-all duration-300 group-hover:bg-green group-hover:text-white">
+                    <Target className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-ink-900 group-hover:text-green transition-colors duration-300">
+                      {t.nosotros.purpose.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-ink-650 leading-relaxed">
+                      {t.nosotros.purpose.text}
+                    </p>
+                  </div>
                 </div>
+              </Fade>
 
-                {/* Mission */}
-                <div className="border-l-2 border-green pl-6 py-1">
-                  <h3 className="font-display text-lg font-bold text-ink-900">
-                    {t.nosotros.mission.title}
-                  </h3>
-                  <p className="mt-2.5 text-base text-ink-650 leading-relaxed">
-                    {t.nosotros.mission.text}
-                  </p>
+              {/* Mission */}
+              <Fade direction="left" triggerOnce delay={150} duration={600}>
+                <div className="rounded-card bg-paper border border-ink-200 p-6 shadow-sm hover:shadow-md hover:bg-white transition-all duration-350 flex items-start gap-4 group">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-tint text-green transition-all duration-300 group-hover:bg-green group-hover:text-white">
+                    <Activity className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-ink-900 group-hover:text-green transition-colors duration-300">
+                      {t.nosotros.mission.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-ink-650 leading-relaxed">
+                      {t.nosotros.mission.text}
+                    </p>
+                  </div>
                 </div>
+              </Fade>
 
-                {/* Vision */}
-                <div className="border-l-2 border-green pl-6 py-1">
-                  <h3 className="font-display text-lg font-bold text-ink-900">
-                    {t.nosotros.vision.title}
-                  </h3>
-                  <p className="mt-2.5 text-base text-ink-650 leading-relaxed">
-                    {t.nosotros.vision.text}
-                  </p>
+              {/* Vision */}
+              <Fade direction="left" triggerOnce delay={200} duration={600}>
+                <div className="rounded-card bg-paper border border-ink-200 p-6 shadow-sm hover:shadow-md hover:bg-white transition-all duration-350 flex items-start gap-4 group">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-tint text-green transition-all duration-300 group-hover:bg-green group-hover:text-white">
+                    <Compass className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-ink-900 group-hover:text-green transition-colors duration-300">
+                      {t.nosotros.vision.title}
+                    </h3>
+                    <p className="mt-2 text-xs text-ink-650 leading-relaxed">
+                      {t.nosotros.vision.text}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Fade>
+              </Fade>
+            </div>
           </div>
 
           {/* Right Column: Principles Grid */}
@@ -82,9 +101,9 @@ export default function Nosotros() {
                   return (
                     <div
                       key={principle.title}
-                      className={`h-full rounded-card p-6 border transition-all duration-300 hover:-translate-y-1 ${
+                      className={`h-full rounded-card p-6 border transition-all duration-300 hover:-translate-y-1.5 ${
                         dark
-                          ? 'bg-ink-900 border-white/5 text-white shadow-lg'
+                          ? 'bg-ink-900 border-white/5 text-white shadow-lg shadow-black/10'
                           : 'bg-white border-ink-150 text-ink-900'
                       }`}
                     >
@@ -102,7 +121,7 @@ export default function Nosotros() {
                       >
                         {principle.title}
                       </h4>
-                      <p className={`mt-2.5 text-sm leading-relaxed ${dark ? 'text-white/70' : 'text-ink-500'}`}>
+                      <p className={`mt-2.5 text-xs leading-relaxed ${dark ? 'text-white/70' : 'text-ink-500'}`}>
                         {principle.description}
                       </p>
                     </div>
@@ -112,7 +131,7 @@ export default function Nosotros() {
             </div>
             
             <Fade direction="up" triggerOnce duration={600} delay={250}>
-              <div className="rounded-card bg-ink-950 text-white p-6 border border-white/5 font-sans text-xs italic opacity-95 leading-relaxed">
+              <div className="rounded-card bg-ink-950 text-white p-6 border border-white/5 font-sans text-xs italic opacity-95 leading-relaxed shadow-lg">
                 <span className="text-green-bright font-bold not-italic">Nota de coherencia:</span> la IA es el eje, no un pilar aislado. Modernizamos aplicaciones, ordenamos datos y operamos infraestructura de IA para que la inteligencia artificial funcione de punta a punta. Eso es lo que nos diferencia de la TI tradicional.
               </div>
             </Fade>
