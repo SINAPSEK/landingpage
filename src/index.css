@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink-900 font-sans antialiased;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold;
+  }
+
+  :focus-visible {
+    outline: 2px solid #159a4f;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-green;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-container px-7;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-green px-6 py-3 font-sans font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 px-6 py-3 font-sans font-semibold text-ink-900 transition-all duration-200 hover:-translate-y-0.5 hover:border-green hover:text-green;
+  }
+
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 font-sans font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-green-bright hover:text-green-bright;
+  }
+
+  .gradient-text {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply rounded-card border border-ink-200 bg-white transition-shadow duration-200 hover:shadow-xl;
+  }
+
+  .chip {
+    @apply rounded-full border border-ink-200 bg-paper px-3 py-1 font-mono text-xs uppercase tracking-wide text-ink-500;
+  }
+}
