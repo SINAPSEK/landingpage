@@ -36,9 +36,7 @@ export default function Hero() {
                 </a>
               </div>
 
-              <p className="glass mt-12 px-5 py-2.5 font-mono text-xs uppercase tracking-wide text-ink-dim">
-                {t.hero.credibility}
-              </p>
+
             </Fade>
           </div>
 
