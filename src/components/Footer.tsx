@@ -1,7 +1,10 @@
 import { ExternalLink, Mail } from 'lucide-react';
 import { CONTACT_EMAIL, GITHUB_URL } from '../constants';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-ink-900 py-12 text-white/70">
       <div className="section-container flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
@@ -28,12 +31,12 @@ export default function Footer() {
             className="flex items-center gap-2 text-sm transition-colors hover:text-green-bright"
           >
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            GitHub
+            {t.footer.github}
           </a>
         </div>
 
         <p className="font-mono text-xs uppercase tracking-wide text-white/40">
-          Made in Ecuador · shipped worldwide · © 2026
+          {t.footer.tagline}
         </p>
       </div>
     </footer>

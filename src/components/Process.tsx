@@ -1,28 +1,10 @@
 import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion';
-
-const STEPS = [
-  {
-    number: '1',
-    title: 'Scope',
-    description:
-      'A short call to find the one process worth automating. You get a fixed-scope, fixed-price proposal within 48 hours — no vague estimates.',
-  },
-  {
-    number: '2',
-    title: 'Build',
-    description:
-      'We build in the open. A working slice each week, deployed to a staging environment you can click through and react to.',
-  },
-  {
-    number: '3',
-    title: 'Ship',
-    description:
-      'Deployed to your stack, documented, and handed over. The code is yours. We stay on for hosting and iteration only if you want us to.',
-  },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Process() {
+  const { t } = useLanguage();
+
   return (
     <section id="how-it-works" className="bg-paper py-24 md:py-32">
       <div className="section-container">
@@ -32,9 +14,9 @@ export default function Process() {
           viewport={viewportOnce}
           variants={fadeUp}
         >
-          <p className="eyebrow">how a sprint works</p>
+          <p className="eyebrow">{t.process.eyebrow}</p>
           <h2 className="mt-5 max-w-2xl text-h2 font-display font-extrabold leading-tight tracking-[-0.02em] text-ink-900">
-            From first call to shipped, in three moves.
+            {t.process.title}
           </h2>
         </motion.div>
 
@@ -45,7 +27,7 @@ export default function Process() {
           viewport={viewportOnce}
           variants={staggerContainer}
         >
-          {STEPS.map((step) => (
+          {t.process.steps.map((step) => (
             <motion.li key={step.number} variants={fadeUp} className="card p-8">
               <span className="font-display text-4xl font-extrabold text-green">
                 {step.number}
@@ -65,7 +47,7 @@ export default function Process() {
           variants={fadeUp}
           className="mt-12 text-center font-mono text-xs uppercase tracking-[0.18em] text-ink-500"
         >
-          typical timeline 2–3 weeks · milestone-based · 50% to start
+          {t.process.footer}
         </motion.p>
       </div>
     </section>
