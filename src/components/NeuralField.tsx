@@ -66,10 +66,12 @@ function buildField() {
 
 export default function NeuralField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -84,6 +86,11 @@ export default function NeuralField() {
     let height = 0;
     let raf = 0;
     let lastSpawn = 0;
+
+    let targetX = 0;
+    let targetY = 0;
+    let parallaxX = 0;
+    let parallaxY = 0;
 
     const resize = () => {
       const parent = canvas.parentElement;
@@ -110,26 +117,39 @@ export default function NeuralField() {
       lastSpawn = time;
     };
 
-    const drawStatic = () => {
-      resize();
-      ctx.clearRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgba(230, 245, 236, 0.14)';
-      ctx.lineWidth = 1;
+    const drawEdges = (alpha: number) => {
       edges.forEach(({ a, b }) => {
         const na = nodes[a];
         const nb = nodes[b];
+        const x1 = na.x * width;
+        const y1 = na.y * height;
+        const x2 = nb.x * width;
+        const y2 = nb.y * height;
+        const gradient = ctx.createLinearGradient(x1, y1, x2, y2);
+        gradient.addColorStop(0, `rgba(47, 224, 166, ${alpha})`);
+        gradient.addColorStop(1, `rgba(92, 240, 138, ${alpha})`);
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(na.x * width, na.y * height);
-        ctx.lineTo(nb.x * width, nb.y * height);
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
         ctx.stroke();
       });
+    };
+
+    const drawStatic = () => {
+      resize();
+      ctx.clearRect(0, 0, width, height);
+      drawEdges(0.16);
 
       nodes.forEach((n) => {
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(61, 224, 138, 0.55)';
+        ctx.shadowColor = 'rgba(92, 240, 138, 0.9)';
+        ctx.shadowBlur = 6;
+        ctx.fillStyle = 'rgba(92, 240, 138, 0.7)';
         ctx.arc(n.x * width, n.y * height, 1.8, 0, Math.PI * 2);
         ctx.fill();
+        ctx.shadowBlur = 0;
       });
     };
 
@@ -142,26 +162,30 @@ export default function NeuralField() {
 
     resize();
 
-    const render = (time: number) => {
-      ctx.clearRect(0, 0, width, height);
+    const onPointerMove = (event: PointerEvent) => {
+      const rect = wrap.getBoundingClientRect();
+      targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    };
+    window.addEventListener('pointermove', onPointerMove);
 
-      ctx.strokeStyle = 'rgba(230, 245, 236, 0.12)';
-      ctx.lineWidth = 1;
-      edges.forEach(({ a, b }) => {
-        const na = nodes[a];
-        const nb = nodes[b];
-        ctx.beginPath();
-        ctx.moveTo(na.x * width, na.y * height);
-        ctx.lineTo(nb.x * width, nb.y * height);
-        ctx.stroke();
-      });
+    const render = (time: number) => {
+      parallaxX += (targetX - parallaxX) * 0.04;
+      parallaxY += (targetY - parallaxY) * 0.04;
+      canvas.style.transform = `translate3d(${parallaxX * -8}px, ${parallaxY * -6}px, 0)`;
+
+      ctx.clearRect(0, 0, width, height);
+      drawEdges(0.14);
 
       nodes.forEach((n) => {
         const flicker = 0.45 + Math.sin(time * 0.0006 + n.phase) * 0.15;
         ctx.beginPath();
-        ctx.fillStyle = `rgba(61, 224, 138, ${flicker})`;
+        ctx.shadowColor = 'rgba(92, 240, 138, 0.9)';
+        ctx.shadowBlur = 7;
+        ctx.fillStyle = `rgba(92, 240, 138, ${flicker})`;
         ctx.arc(n.x * width, n.y * height, 1.8, 0, Math.PI * 2);
         ctx.fill();
+        ctx.shadowBlur = 0;
       });
 
       if (time - lastSpawn > 1400) {
@@ -181,16 +205,16 @@ export default function NeuralField() {
         const x = (na.x + (nb.x - na.x) * pulse.t) * width;
         const y = (na.y + (nb.y - na.y) * pulse.t) * height;
 
-        const glow = ctx.createRadialGradient(x, y, 0, x, y, 10);
-        glow.addColorStop(0, 'rgba(61, 224, 138, 0.9)');
-        glow.addColorStop(1, 'rgba(61, 224, 138, 0)');
+        const glow = ctx.createRadialGradient(x, y, 0, x, y, 12);
+        glow.addColorStop(0, 'rgba(92, 240, 138, 0.95)');
+        glow.addColorStop(1, 'rgba(92, 240, 138, 0)');
         ctx.beginPath();
         ctx.fillStyle = glow;
-        ctx.arc(x, y, 10, 0, Math.PI * 2);
+        ctx.arc(x, y, 12, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.beginPath();
-        ctx.fillStyle = '#3DE08A';
+        ctx.fillStyle = '#5CF08A';
         ctx.arc(x, y, 2.4, 0, Math.PI * 2);
         ctx.fill();
       }
@@ -206,14 +230,13 @@ export default function NeuralField() {
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', onResize);
+      window.removeEventListener('pointermove', onPointerMove);
     };
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full"
-    />
+    <div ref={wrapRef} className="pointer-events-none absolute inset-0 overflow-hidden">
+      <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 h-full w-full" />
+    </div>
   );
 }

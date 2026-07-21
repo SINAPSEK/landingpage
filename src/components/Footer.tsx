@@ -1,6 +1,7 @@
 import { ExternalLink, Mail } from 'lucide-react';
 import { CONTACT_EMAIL, GITHUB_URL } from '../constants';
 import { useLanguage } from '../i18n/LanguageContext';
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -8,12 +9,13 @@ export default function Footer() {
   return (
     <footer className="bg-ink-900 py-12 text-white/70">
       <div className="section-container flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
-        <div className="flex items-center gap-2 font-display text-lg font-bold text-white">
-          <span
-            className="inline-block h-2.5 w-2.5 rounded-full bg-green"
-            aria-hidden="true"
+        <div className="flex items-center gap-2.5 font-display text-lg font-bold text-white">
+          <img 
+            src={logo} 
+            alt="SINAPSEK Logo" 
+            className="h-8 w-8 object-contain" 
           />
-          SINAPSEK
+          <span>SINAPSEK</span>
         </div>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">

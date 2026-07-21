@@ -2,28 +2,30 @@ import type { Dictionary } from './en';
 
 export const es: Dictionary = {
   meta: {
-    title: 'SINAPSEK — Estudio de ingeniería de IA | Automation Sprints y Document AI',
+    title: 'SINAPSEK — Estudio de ingeniería de IA | IA aplicada, lista para producción',
     description:
-      'SINAPSEK es un estudio de ingeniería de IA de dos personas en Quito, Ecuador. Construimos agentes y document AI listos para producción para equipos SaaS y agencias — alcance fijo, en producción en 2–3 semanas. Agenda una auditoría gratuita.',
+      'SINAPSEK es un estudio de ingeniería en Quito, Ecuador, que construye servicios de aplicaciones, datos e infraestructura de IA listos para producción para equipos empresariales — alcance fijo, ingenieros senior. Agenda un diagnóstico de IA gratuito.',
   },
   nav: {
     links: [
-      { label: 'Qué hacemos', href: '#what-we-build' },
+      { label: 'Servicios', href: '#what-we-build' },
+      { label: 'Núcleo', href: '#nucleo' },
+      { label: 'Nosotros', href: '#nosotros' },
       { label: 'Cómo trabajamos', href: '#how-it-works' },
-      { label: 'Precios', href: '#pricing' },
+      { label: 'Contacto', href: '#contacto' },
     ],
-    bookCall: 'Agenda una llamada',
     openMenu: 'Abrir menú',
     closeMenu: 'Cerrar menú',
   },
   hero: {
-    eyebrow: 'Estudio de ingeniería de IA · Quito → el mundo',
-    titleLead: 'Conectamos tu producto con',
-    titleAccent: 'IA lista para producción.',
+    eyebrow: 'Ingeniería AI-first · aplicaciones, datos e infraestructura',
+    titleLead: 'Tu empresa,',
+    titleAccent: 'aumentada por IA',
+    titleTrail: ', de punta a punta.',
     subtitle:
-      'SINAPSEK es un estudio de ingeniería de IA de dos personas. Construimos los agentes y el document-AI que tu SaaS o agencia necesita — alcance fijo, en producción en 2–3 semanas, sobre tu propio stack.',
-    ctaPrimary: 'Agenda una auditoría gratuita',
-    ctaSecondary: 'Ve qué construimos',
+      'Modernizamos tus aplicaciones, activamos tus datos y operamos la infraestructura de IA que hace que todo funcione — con alcance y tiempos definidos, del emprendedor a la gran empresa.',
+    ctaSecondary: 'Explora nuestros servicios',
+    credibility: 'Ingeniería a producción sobre AWS · Speakers en AWS Community Day Ecuador 2026 y GDG Quito',
   },
   gap: {
     eyebrow: 'la brecha',
@@ -33,27 +35,97 @@ export const es: Dictionary = {
   },
   services: {
     eyebrow: 'qué construimos',
-    title: 'Dos formas de poner la IA a trabajar de verdad.',
+    title: 'Tres formas de poner ingeniería detrás de tu roadmap.',
     subtitle:
-      'Nada de retainers abiertos que no llevan a ningún lado. Cada proyecto tiene alcance fijo, precio fijo y un sistema funcionando al final.',
-    items: [
+      'En SINAPSEK la inteligencia artificial no es un servicio más: es el hilo que conecta todo. Modernizamos tus aplicaciones, activamos tus datos y operamos la infraestructura de IA que hace que todo funcione.',
+    categories: [
       {
-        index: '01',
-        title: 'Automation Sprint',
-        role: 'un proceso manual → un agente',
-        description:
-          'Elige un flujo repetitivo — cotizaciones, triage de correos, reportes, extraer datos de documentos. Diseñamos, construimos y desplegamos un agente que lo hace. Ves avances cada semana, y el código es tuyo al final.',
-        chips: ['2–3 semanas', 'desde $1,900', '50% por adelantado'],
+        icon: 'appWindow',
+        title: 'Servicios de Aplicaciones',
+        subtitle: 'Opera, construye y moderniza las aplicaciones de las que depende tu negocio, con IA integrada.',
+        items: [
+          'Desarrollo de aplicaciones (web, móvil y a medida con IA embebida desde el primer día)',
+          'Gestión de aplicaciones (AMS) y evolución continua para que nunca se detengan',
+          'Modernización de aplicaciones y mainframe (migración de sistemas legacy a la nube)',
+          'Estrategia, arquitectura y gestión de carteras de aplicaciones empresariales',
+          'Aplicaciones empresariales (integración de ERP, CRM e infraestructura conectada a IA)',
+        ],
       },
       {
-        index: '02',
-        title: 'Document AI',
-        role: 'tu base de conocimiento → consultable',
-        description:
-          'Convierte manuales, tickets, contratos y documentos internos en un asistente al que tu equipo o tus usuarios realmente puedan preguntarle. RAG en producción sobre tus datos, con respuestas basadas en tus fuentes, alojado y mantenido por nosotros.',
-        chips: ['desde $2,500 de setup', '+ hosting mensual', 'tus datos siguen siendo tuyos'],
+        icon: 'barChart',
+        title: 'Datos y Analítica',
+        subtitle: 'Convertimos tus datos en decisiones — y en el combustible de tu IA.',
+        items: [
+          'Plataformas e ingeniería de datos (pipelines, data warehouse y lakehouse listos para IA)',
+          'Visualización de datos y decisiones empresariales (tableros BI claros)',
+          'Consultoría de IA (identificación de casos de uso con alto retorno y diseño de hoja de ruta)',
+        ],
+      },
+      {
+        icon: 'cpu',
+        title: 'Infraestructura y Servicios de IA',
+        subtitle: 'La base operativa aplicada, segura, confiable y bajo control para tu IA en producción.',
+        items: [
+          'Servicios de IA (agentes en producción, asistentes RAG e integración de foundation models)',
+          'Infraestructura de IA (AI Ops, despliegue serverless, LLMOps, monitoreo y costos)',
+          'Gobernanza y seguridad de IA (trazabilidad, cumplimiento y control de datos)',
+        ],
       },
     ],
+    diagnosticCard: {
+      title: 'Diagnóstico de IA gratuito',
+      description: 'Encontramos el proceso donde la IA genera más retorno y proponemos el primer caso de uso, con alcance y precio fijo.',
+      cta: 'Solicita un Diagnóstico Gratuito',
+    },
+  },
+  nucleo: {
+    eyebrow: 'producto estrella',
+    title: 'SINAPSEK Núcleo',
+    subtitle: 'La capa de IA de tu empresa — conectada a tu negocio, creciendo contigo.',
+    concept: 'Núcleo es la capa de inteligencia artificial de tu empresa — la conectamos a tu negocio y crece contigo, del primer asistente hasta la transformación completa.',
+    diagnosticTitle: 'La puerta de entrada: Diagnóstico de IA',
+    diagnosticDesc: 'Una auditoría corta y gratuita: encontramos el proceso donde la IA genera más retorno y proponemos el primer caso de uso, con alcance y precio fijo.',
+    diagnosticCta: 'Solicita un Diagnóstico Gratuito',
+    tiers: [
+      {
+        id: 'emprende',
+        name: 'Núcleo Emprende',
+        subtitle: 'Para micro y pequeñas empresas. Tu primera IA en producción, sin equipo técnico.',
+        features: [
+          'Un agente de IA para ventas y atención al cliente (WhatsApp / web)',
+          'Conectado a tu catálogo de productos e información de negocio',
+          'Responde, cotiza, agenda y da seguimiento — 24/7',
+          'Tablero simple para ver las interacciones de clientes y rendimiento',
+        ],
+        price: 'Setup bajo + suscripción mensual accesible',
+        featured: false,
+      },
+      {
+        id: 'crece',
+        name: 'Núcleo Crece',
+        subtitle: 'Para medianas empresas y en expansión. Automatiza tu operación y decide con datos.',
+        features: [
+          'Automatización de procesos internos (reportes, cotizaciones, extracción de datos de documentos)',
+          'Asistente sobre tus datos (RAG) privado para tu equipo de trabajo',
+          'Tablero de decisiones (Data & Analytics) con tus métricas reales',
+        ],
+        price: 'Proyecto con alcance fijo + mantenimiento y hosting mensual',
+        featured: true,
+      },
+      {
+        id: 'corporativo',
+        name: 'Núcleo Corporativo',
+        subtitle: 'Para grandes empresas. Transformación con IA, de punta a punta a escala.',
+        features: [
+          'Todo lo de los tres pilares a medida: modernización, datos, infraestructura y gobernanza de IA',
+          'Agentes empresariales complejos multi-modelo y pipeline LLMOps personalizado',
+          'Equipo de ingeniería dedicado y hoja de ruta tecnológica plurianual',
+        ],
+        price: 'Contrato a medida (proyecto por hitos + servicio gestionado / SLA)',
+        featured: false,
+      },
+    ],
+    tierCta: 'Hablemos',
   },
   audiences: {
     eyebrow: 'para quién es',
@@ -73,8 +145,47 @@ export const es: Dictionary = {
       },
     ],
   },
+  nosotros: {
+    eyebrow: 'nosotros',
+    title: 'Nuestra Identidad y Principios',
+    purpose: {
+      title: 'Propósito',
+      text: 'Que toda organización, del emprendedor a la gran empresa, pueda operar aumentada por inteligencia artificial.',
+    },
+    mission: {
+      title: 'Misión',
+      text: 'Diseñamos, construimos, modernizamos y operamos aplicaciones, plataformas de datos e infraestructura de IA que convierten la tecnología en resultados de negocio medibles — con la inteligencia artificial como hilo conductor de todo lo que hacemos.',
+    },
+    vision: {
+      title: 'Visión',
+      text: 'Ser el socio tecnológico AI-first de referencia en la región andina: una empresa que lleva la IA aplicada de la promesa a la producción, y que exporta productos y talento al mundo.',
+    },
+    principlesTitle: 'Lo que nos hace distintos',
+    principles: [
+      {
+        icon: 'server',
+        title: 'Producción, no prototipos',
+        description: 'Entregamos sistemas que las empresas usan de verdad todos los días en su operación real, no demos de usar y tirar.',
+      },
+      {
+        icon: 'workflow',
+        title: 'IA con propósito de negocio',
+        description: 'Cada solución nace de un caso de uso comercial claro, diseñado para generar un retorno de inversión real y medible.',
+      },
+      {
+        icon: 'shield',
+        title: 'Alcance y transparencia',
+        description: 'Precios y tiempos de entrega fijos definidos antes de empezar, reduciendo riesgos y eliminando sorpresas.',
+      },
+      {
+        icon: 'userCheck',
+        title: 'Tuyo desde el día uno',
+        description: 'El código, los prompts, los datos y las configuraciones de infraestructura son del cliente. Sin lock-in ni dependencias.',
+      },
+    ],
+  },
   process: {
-    eyebrow: 'cómo funciona un sprint',
+    eyebrow: 'cómo trabajamos',
     title: 'De la primera llamada a producción, en tres pasos.',
     footer: 'tiempo típico 2–3 semanas · por hitos · 50% para iniciar',
     steps: [
@@ -98,87 +209,6 @@ export const es: Dictionary = {
       },
     ],
   },
-  whyUs: {
-    eyebrow: 'por qué sinapsek',
-    title: 'Ingeniería senior, no un prototipo en un notebook.',
-    reasons: [
-      {
-        icon: 'server',
-        title: 'Producción, no prototipos',
-        description:
-          'Serverless en AWS — Lambda, Step Functions, Terraform — el mismo stack que corremos en producción hoy. Construido para mantenerse en pie, no para una demo única.',
-      },
-      {
-        icon: 'workflow',
-        title: 'Agentes con las herramientas más nuevas',
-        description:
-          'LangGraph, RAG, MCP y Agent Skills. La mayoría de los shops todavía no llegan a las herramientas agénticas — para nosotros es el punto de partida.',
-      },
-      {
-        icon: 'userCheck',
-        title: 'Liderado por sus fundadores',
-        description:
-          'Trabajas directo con los ingenieros que escriben el código. Sin account managers, sin traspasos.',
-      },
-      {
-        icon: 'mic',
-        title: 'Con nombre y cara',
-        description:
-          'Speakers en AWS Community Day Ecuador 2026 y GDG Quito. Construimos en público y respaldamos el trabajo.',
-      },
-      {
-        icon: 'globe',
-        title: 'Hecho para exportar',
-        description:
-          'Remoto, cubriendo zonas horarias de EE. UU. y Europa. Facturamos limpio en USD o EUR, sin fricción transfronteriza para ti.',
-      },
-      {
-        icon: 'shield',
-        title: 'Alcance fijo, riesgo compartido de verdad',
-        description:
-          'Apruebas el alcance y el precio antes de empezar. La auditoría que te lleva ahí no cuesta nada.',
-      },
-    ],
-  },
-  pricing: {
-    eyebrow: 'precios',
-    title: 'Precio claro desde el inicio, para que puedas decidir rápido.',
-    subtitle:
-      'Puntos de partida, no cotizaciones finales — cada proyecto se define según lo que realmente necesitas.',
-    badge: 'Más elegido',
-    footer:
-      '¿No sabes cuál necesitas? Empieza con una auditoría gratuita — encontramos un proceso que valga la pena automatizar y te decimos, sin rodeos, si vale la pena.',
-    plans: [
-      {
-        title: 'Automation Sprint',
-        price: 'desde $1,900',
-        priceNote: '(alcance fijo)',
-        features: [
-          'Un flujo de trabajo automatizado de principio a fin',
-          'Sistema funcionando en 2–3 semanas',
-          'Builds semanales en staging que puedes revisar',
-          'El código y el despliegue son tuyos',
-          '50% para iniciar, 50% contra entrega',
-        ],
-        cta: 'Inicia un Sprint',
-        featured: true,
-      },
-      {
-        title: 'Document AI',
-        price: '$2,500 de setup',
-        priceNote: '+ hosting mensual',
-        features: [
-          'Asistente basado en tus propias fuentes',
-          'RAG en producción, alojado y mantenido',
-          'Las respuestas citan de dónde salieron',
-          'Tus datos siguen siendo tuyos, siempre',
-          'Escala hacia un producto que puedes revender',
-        ],
-        cta: 'Conversemos',
-        featured: false,
-      },
-    ],
-  },
   faq: {
     eyebrow: 'preguntas frecuentes',
     title: 'Preguntas frecuentes.',
@@ -196,7 +226,12 @@ export const es: Dictionary = {
       {
         question: '¿Qué tan rápido podemos empezar?',
         answer:
-          'La llamada de auditoría se agenda en días. Si encajamos, recibes una propuesta fija en 48 horas y el Sprint suele arrancar la semana siguiente.',
+          'La llamada de diagnóstico se agenda en días. Si encajamos, recibes una propuesta de alcance fijo en 48 horas y el proyecto suele arrancar la semana siguiente.',
+      },
+      {
+        question: '¿Trabajan con sistemas legacy y mainframe?',
+        answer:
+          'Sí. La modernización de aplicaciones y mainframe es una de nuestras líneas de servicio principales — la planteamos como una migración por fases con puntos de control funcionando, no como un reemplazo total de una sola vez.',
       },
       {
         question: '¿Dónde están ubicados?',
@@ -206,16 +241,16 @@ export const es: Dictionary = {
       {
         question: '¿Y si resulta que la IA no es la respuesta?',
         answer:
-          'Entonces te lo decimos. La auditoría es gratuita y honesta — si un flujo no vale la pena automatizarlo, lo vas a saber antes de gastar nada.',
+          'Entonces te lo decimos. El diagnóstico es gratuito y honesta — si un flujo no vale la pena automatizarlo, lo vas a saber antes de gastar nada.',
       },
     ],
   },
   finalCta: {
     eyebrow: 'empecemos',
-    title: 'Encontremos un proceso que valga la pena automatizar.',
+    title: 'Encontremos el proceso donde la IA genera más retorno.',
     subtitle:
-      'Una llamada de 20 minutos, una auditoría gratuita y una respuesta directa. Sin presentaciones, sin presión.',
-    cta: 'Agenda una auditoría gratuita',
+      'Una llamada de 20 minutos, un Diagnóstico de IA gratuito y una respuesta directa. Sin presentaciones de diapositivas, sin presión.',
+    cta: 'Agenda tu Diagnóstico de IA gratuito',
   },
   footer: {
     tagline: 'Hecho en Ecuador · entregado al mundo · © 2026',

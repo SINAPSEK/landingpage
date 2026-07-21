@@ -1,27 +1,29 @@
 export const en = {
   meta: {
-    title: 'SINAPSEK — AI engineering studio | Automation Sprints & Document AI',
+    title: 'SINAPSEK — AI Engineering Studio | Applied AI, production-ready',
     description:
-      "SINAPSEK is a two-person AI engineering studio in Quito, Ecuador. We build production-grade agents and document AI for SaaS teams and agencies — fixed scope, live in 2–3 weeks. Book a free automation audit.",
+      'SINAPSEK is an AI engineering studio in Quito, Ecuador, building production-grade application, data, and AI infrastructure services for enterprise teams — fixed scope, senior engineers. Request a free AI diagnostic.',
   },
   nav: {
     links: [
-      { label: 'What we build', href: '#what-we-build' },
-      { label: 'How it works', href: '#how-it-works' },
-      { label: 'Pricing', href: '#pricing' },
+      { label: 'Services', href: '#what-we-build' },
+      { label: 'Núcleo', href: '#nucleo' },
+      { label: 'About Us', href: '#nosotros' },
+      { label: 'How We Work', href: '#how-it-works' },
+      { label: 'Contact', href: '#contacto' },
     ],
-    bookCall: 'Book a call',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
   },
   hero: {
-    eyebrow: 'AI engineering studio · Quito → worldwide',
-    titleLead: 'We connect your product to',
-    titleAccent: 'production-grade AI.',
+    eyebrow: 'AI-first engineering · applications, data & infrastructure',
+    titleLead: 'Your business,',
+    titleAccent: 'augmented by AI',
+    titleTrail: ', end to end.',
     subtitle:
-      'SINAPSEK is a two-person AI engineering studio. We build the agents and document-AI your SaaS or agency needs — fixed scope, live in 2–3 weeks, running on your stack.',
-    ctaPrimary: 'Book a free automation audit',
-    ctaSecondary: 'See what we build',
+      'We modernize your applications, activate your data, and operate the AI infrastructure that makes it all work — with clear scope and timelines, from first-time founders to large enterprises.',
+    ctaSecondary: 'Explore our services',
+    credibility: 'Production engineering on AWS · Speakers at AWS Community Day Ecuador 2026 and GDG Quito',
   },
   gap: {
     eyebrow: 'the gap',
@@ -31,27 +33,97 @@ export const en = {
   },
   services: {
     eyebrow: 'what we build',
-    title: 'Two ways to put real AI to work.',
+    title: 'Three ways we put engineering behind your roadmap.',
     subtitle:
-      'No open-ended retainers to nowhere. Each engagement has a fixed scope, a fixed price, and a working system at the end.',
-    items: [
+      'In SINAPSEK, artificial intelligence is not just another service: it is the thread connecting everything. We modernize your applications, activate your data, and operate the AI infrastructure that makes it all work.',
+    categories: [
       {
-        index: '01',
-        title: 'Automation Sprint',
-        role: 'one manual process → one agent',
-        description:
-          'Pick a repetitive workflow — quotes, email triage, reporting, pulling data out of documents. We design, build and deploy an agent that does it. You see progress every week, and you own the code at the end.',
-        chips: ['2–3 weeks', 'from $1,900', '50% upfront'],
+        icon: 'appWindow',
+        title: 'Application Services',
+        subtitle: 'Run, build and modernize the applications your business depends on, with embedded AI.',
+        items: [
+          'Application development (web, mobile, custom with embedded AI)',
+          'Application management (AMS) and continuous evolution',
+          'Application and mainframe modernization (cloud migration)',
+          'Enterprise application strategy, architecture, and portfolio management',
+          'Enterprise applications integration (ERP, CRM, Core connected to AI)',
+        ],
       },
       {
-        index: '02',
-        title: 'Document AI',
-        role: 'your knowledge base → answerable',
-        description:
-          'Turn manuals, tickets, contracts and internal docs into an assistant your team or your users can actually ask. Production RAG on your data, grounded in your sources, hosted and maintained by us.',
-        chips: ['from $2,500 setup', '+ monthly hosting', 'your data stays yours'],
+        icon: 'barChart',
+        title: 'Data and Analytics',
+        subtitle: 'Turn raw data into platforms and decisions your teams and AI can act on.',
+        items: [
+          'Data platforms and engineering (pipelines, lakehouses)',
+          'Data visualization and business decision support (BI)',
+          'AI consulting (use case identification and roadmapping)',
+        ],
+      },
+      {
+        icon: 'cpu',
+        title: 'AI Infrastructure Services',
+        subtitle: 'The operational, secure, and reliable backbone for AI running in production.',
+        items: [
+          'AI Services (agents, RAG, foundation model integration)',
+          'AI Infrastructure (AI Ops, serverless deployment, LLMOps)',
+          'AI Governance and security (compliance, data control)',
+        ],
       },
     ],
+    diagnosticCard: {
+      title: 'Free AI Diagnostic',
+      description: 'We identify the process where AI generates the highest return and propose the first use case with fixed scope and price.',
+      cta: 'Request Free Diagnostic',
+    },
+  },
+  nucleo: {
+    eyebrow: 'flagship product',
+    title: 'SINAPSEK Núcleo',
+    subtitle: 'The AI layer of your business — connected to your operations, growing with you.',
+    concept: 'Núcleo is your company\'s artificial intelligence layer. We connect it to your business and it grows with you, from the first assistant to full digital transformation.',
+    diagnosticTitle: 'The Entryway: Free AI Diagnostic',
+    diagnosticDesc: 'A short and free audit: we find the process where AI will generate the most return and propose the first custom use case, with fixed scope and price.',
+    diagnosticCta: 'Request a Free Diagnostic',
+    tiers: [
+      {
+        id: 'emprende',
+        name: 'Núcleo Emprende',
+        subtitle: 'For micro and small businesses. Your first AI in production, no technical team required.',
+        features: [
+          'AI agent for sales and customer support (WhatsApp / Web)',
+          'Connected to your product catalog and business info',
+          'Replies, quotes, schedules, and follows up 24/7',
+          'Simple dashboard to track customer interactions and sales',
+        ],
+        price: 'Low setup fee + accessible monthly subscription',
+        featured: false,
+      },
+      {
+        id: 'crece',
+        name: 'Núcleo Crece',
+        subtitle: 'For mid-sized and growing companies. Automate your operations and decide with data.',
+        features: [
+          'Internal process automation (reports, automated quotes, document data extraction)',
+          'Internal AI assistant (RAG) over company documents for your team',
+          'Decision dashboard (Data & Analytics) with your real business metrics',
+        ],
+        price: 'Fixed-scope project + monthly maintenance & hosting',
+        featured: true,
+      },
+      {
+        id: 'corporativo',
+        name: 'Núcleo Corporativo',
+        subtitle: 'For large enterprises. End-to-end AI transformation at scale.',
+        features: [
+          'Fully tailored services combining modern applications, data platforms, infrastructure, and AI governance',
+          'Complex multi-model enterprise agents and custom LLMOps pipeline',
+          'Dedicated engineering team and multi-year technology roadmap',
+        ],
+        price: 'Custom contract (project milestone-based + managed services)',
+        featured: false,
+      },
+    ],
+    tierCta: 'Talk to us',
   },
   audiences: {
     eyebrow: "who it's for",
@@ -71,9 +143,48 @@ export const en = {
       },
     ],
   },
+  nosotros: {
+    eyebrow: 'about us',
+    title: 'Our Identity & Principles',
+    purpose: {
+      title: 'Purpose',
+      text: 'To enable every organization, from small entrepreneurs to large corporations, to operate augmented by artificial intelligence.',
+    },
+    mission: {
+      title: 'Mission',
+      text: 'We design, build, modernize, and operate applications, data platforms, and AI infrastructure that convert technology into measurable business results — with artificial intelligence as the thread connecting everything we do.',
+    },
+    vision: {
+      title: 'Vision',
+      text: 'To be the reference AI-first technology partner in the Andean region: a company that takes applied AI from promise to production, exporting products and talent to the world.',
+    },
+    principlesTitle: 'What Makes Us Different',
+    principles: [
+      {
+        icon: 'server',
+        title: 'Production, not prototypes',
+        description: 'We deliver systems that businesses actually use every day in their real operations, not just throwaway demos or proof-of-concepts.',
+      },
+      {
+        icon: 'workflow',
+        title: 'Business-driven AI',
+        description: 'Every solution stems from a clear business use case designed to generate a real and measurable return on investment.',
+      },
+      {
+        icon: 'shield',
+        title: 'Scope and transparency',
+        description: 'Fixed pricing and delivery timelines defined and agreed upon before starting, minimizing risk and eliminating surprises.',
+      },
+      {
+        icon: 'userCheck',
+        title: 'Yours from day one',
+        description: 'The code, prompts, data structures, and infrastructure configurations belong entirely to the client. Zero vendor lock-in.',
+      },
+    ],
+  },
   process: {
-    eyebrow: 'how a sprint works',
-    title: 'From first call to shipped, in three moves.',
+    eyebrow: 'how we work',
+    title: 'From the first call to production in three moves.',
     footer: 'typical timeline 2–3 weeks · milestone-based · 50% to start',
     steps: [
       {
@@ -96,87 +207,6 @@ export const en = {
       },
     ],
   },
-  whyUs: {
-    eyebrow: 'why sinapsek',
-    title: 'Senior engineering, not a prototype in a notebook.',
-    reasons: [
-      {
-        icon: 'server',
-        title: 'Production, not prototypes',
-        description:
-          'Serverless on AWS — Lambda, Step Functions, Terraform — the same stack we run in production today. Built to stay up, not to demo once.',
-      },
-      {
-        icon: 'workflow',
-        title: 'Agents with the newest tooling',
-        description:
-          "LangGraph, RAG, MCP and Agent Skills. Most shops haven't caught up to agentic tooling yet — it's our default.",
-      },
-      {
-        icon: 'userCheck',
-        title: 'Founder-led',
-        description:
-          'You work directly with the engineers who write the code. No account managers, no handoffs.',
-      },
-      {
-        icon: 'mic',
-        title: 'On the record',
-        description:
-          'Speakers at AWS Community Day Ecuador 2026 and GDG Quito. We build in public and stand behind the work.',
-      },
-      {
-        icon: 'globe',
-        title: 'Built to export',
-        description:
-          'Remote across US and EU time zones. We invoice cleanly in USD or EUR, with no cross-border friction for you.',
-      },
-      {
-        icon: 'shield',
-        title: 'Fixed scope, real risk-sharing',
-        description:
-          'You approve the scope and the price before we start. The audit that gets you there costs nothing.',
-      },
-    ],
-  },
-  pricing: {
-    eyebrow: 'pricing',
-    title: 'Priced upfront, so you can say yes fast.',
-    subtitle:
-      'Starting points, not final quotes — every engagement is scoped to what you actually need.',
-    badge: 'Most popular',
-    footer:
-      "Not sure which you need? Start with a free automation audit — we'll find one process worth automating and tell you straight whether it's worth it.",
-    plans: [
-      {
-        title: 'Automation Sprint',
-        price: 'from $1,900',
-        priceNote: '(fixed scope)',
-        features: [
-          'One workflow automated end-to-end',
-          'Working system in 2–3 weeks',
-          'Weekly staging builds you can review',
-          'You own the code and the deployment',
-          '50% to start, 50% on delivery',
-        ],
-        cta: 'Start a Sprint',
-        featured: true,
-      },
-      {
-        title: 'Document AI',
-        price: '$2,500 setup',
-        priceNote: '+ monthly hosting',
-        features: [
-          'Assistant grounded in your own sources',
-          'Production RAG, hosted and maintained',
-          'Answers cite where they came from',
-          'Your data stays yours, always',
-          'Scales into a product you can resell',
-        ],
-        cta: 'Talk it through',
-        featured: false,
-      },
-    ],
-  },
   faq: {
     eyebrow: 'faq',
     title: 'Frequently asked questions.',
@@ -194,7 +224,12 @@ export const en = {
       {
         question: 'How fast can we start?',
         answer:
-          "The audit call happens within days. If we're a fit, you get a fixed proposal in 48 hours and a Sprint usually kicks off the following week.",
+          "The diagnostic call happens within days. If we're a fit, you get a fixed-scope proposal in 48 hours and the engagement usually kicks off the following week.",
+      },
+      {
+        question: 'Do you work with legacy and mainframe systems?',
+        answer:
+          "Yes. Application and mainframe modernization is one of our core service lines — we scope it as a phased migration with working checkpoints, not a rip-and-replace gamble.",
       },
       {
         question: 'Where are you based?',
@@ -204,16 +239,16 @@ export const en = {
       {
         question: "What if it turns out AI isn't the answer?",
         answer:
-          "Then we tell you. The audit is free and honest — if a workflow isn't worth automating, you'll hear that before you spend anything.",
+          "Then we tell you. The diagnostic is free and honest — if a workflow isn't worth automating, you'll hear that before you spend anything.",
       },
     ],
   },
   finalCta: {
     eyebrow: "let's begin",
-    title: "Let's find one process worth automating.",
+    title: "Let's find the process where AI pays off the most.",
     subtitle:
-      'A 20-minute call, a free audit, and a straight answer. No deck, no pressure.',
-    cta: 'Book a free automation audit',
+      'A 20-minute call, a free AI diagnostic, and a straight answer. No slide deck, no pressure.',
+    cta: 'Book your free AI diagnostic',
   },
   footer: {
     tagline: 'Made in Ecuador · shipped worldwide · © 2026',

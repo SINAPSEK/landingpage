@@ -2,10 +2,10 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gap from './components/Gap';
 import Services from './components/Services';
+import Nucleo from './components/Nucleo';
 import Audiences from './components/Audiences';
+import Nosotros from './components/Nosotros';
 import Process from './components/Process';
-import WhyUs from './components/WhyUs';
-import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -18,10 +18,10 @@ function App() {
         <Hero />
         <Gap />
         <Services />
+        <Nucleo />
         <Audiences />
+        <Nosotros />
         <Process />
-        <WhyUs />
-        <Pricing />
         <FAQ />
         <FinalCTA />
       </main>
